@@ -17,7 +17,6 @@ import tour.tourdemo.service.ApplicationService;
 @RestController
 @RequestMapping("/application")
 public class ApplicationController {
-    @Autowired
     private final ApplicationService applicationService;
 
     @GetMapping("/findAll")
