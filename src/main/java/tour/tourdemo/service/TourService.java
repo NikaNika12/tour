@@ -7,7 +7,7 @@ import java.util.List;
 public interface TourService {
     Tour save(Tour tour);
 
-    Tour update(Tour tour);
+    Tour update(Long id, Tour tour);
 
     Tour findByID(Long id);
 

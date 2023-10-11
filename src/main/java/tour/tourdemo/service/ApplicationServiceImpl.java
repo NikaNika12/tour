@@ -1,10 +1,12 @@
 package tour.tourdemo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import tour.tourdemo.model.Application;
 import tour.tourdemo.repository.ApplicationRepository;
 import java.util.List;
 
+@Service
 public class ApplicationServiceImpl implements ApplicationService {
     @Autowired
     private ApplicationRepository repository;
