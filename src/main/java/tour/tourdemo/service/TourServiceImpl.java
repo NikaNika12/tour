@@ -1,15 +1,17 @@
 package tour.tourdemo.service;
 
 import java.util.List;
+
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tour.tourdemo.model.Tour;
 import tour.tourdemo.repository.TourRepository;
 
+@RequiredArgsConstructor
 @Service
 public class TourServiceImpl implements TourService {
-    @Autowired
-    private TourRepository repository;
+    private final TourRepository repository;
 
     @Override
     public Tour save(Tour tour) {
