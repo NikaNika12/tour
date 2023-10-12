@@ -1,7 +1,6 @@
 package tour.tourdemo.service;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tour.tourdemo.model.Application;
 import tour.tourdemo.repository.ApplicationRepository;
