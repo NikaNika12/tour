@@ -20,7 +20,7 @@ public class TourController {
         return mapper.toDto(tourService.save(mapper.toModel(dto)));
     }
 
-    @GetMapping("/all")
+    @GetMapping("/findAll")
     public List<TourResponseDto> getAll() {
         return tourService.findAll().stream()
                 .map(mapper::toDto)
