@@ -2,9 +2,10 @@ package tour.tourdemo.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import tour.tourdemo.model.Tour;
+import tour.tourdemo.dto.request.TourRequestDto;
+import tour.tourdemo.dto.response.TourResponseDto;
+import tour.tourdemo.mapper.TourMapper;
 import tour.tourdemo.service.TourService;
-
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -12,20 +13,23 @@ import java.util.List;
 @RestController
 public class TourController {
     private final TourService tourService;
+    private final TourMapper mapper;
 
     @GetMapping("/all")
-    public List<Tour> getAllTours() {
-        return tourService.findAll();
+    public List<TourResponseDto> getAllTours() {
+        return tourService.findAll().stream()
+                .map(mapper::toDto)
+                .toList();
     }
 
     @GetMapping("/{id}")
-    public Tour getTourById(@PathVariable Long id) {
-        return tourService.findByID(id);
+    public TourResponseDto getTourById(@PathVariable Long id) {
+        return mapper.toDto(tourService.findByID(id));
     }
 
     @PutMapping("/{id}")
-    public Tour updateById(@PathVariable Long id, @RequestBody Tour tour) {
-        return tourService.update(id, tour);
+    public TourResponseDto updateById(@PathVariable Long id, @RequestBody TourRequestDto dto) {
+        return mapper.toDto(tourService.update(id, dto));
     }
 
     @DeleteMapping("/{id}")
