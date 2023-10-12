@@ -2,8 +2,8 @@ package tour.tourdemo.mapper;
 
 import org.mapstruct.Mapper;
 import tour.tourdemo.config.MapperConfig;
-import tour.tourdemo.dto.TourRequestDto;
-import tour.tourdemo.dto.TourResponseDto;
+import tour.tourdemo.dto.response.TourResponseDto;
+import tour.tourdemo.dto.request.TourRequestDto;
 import tour.tourdemo.model.Tour;
 
 @Mapper(config = MapperConfig.class)
