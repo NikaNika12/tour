@@ -16,20 +16,20 @@ import tour.tourdemo.service.ApplicationService;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/application")
+@RequestMapping("/applications")
 public class ApplicationController {
     private final ApplicationService applicationService;
     private final ApplicationMapper mapper;
 
     @GetMapping("/findAll")
-    public List<ApplicationResponseDto> getAll() {
+    public List<ApplicationResponseDto> findAll() {
         return applicationService.findAll().stream()
                 .map(mapper::toDto)
                 .toList();
     }
 
-    @PostMapping("/save")
-    public ApplicationResponseDto save(@RequestBody ApplicationRequestDto application) {
+    @PostMapping("/crete")
+    public ApplicationResponseDto crete(@RequestBody ApplicationRequestDto application) {
         return mapper.toDto(applicationService.save(mapper.toModel(application)));
     }
 

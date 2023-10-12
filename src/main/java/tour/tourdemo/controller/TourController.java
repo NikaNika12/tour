@@ -15,13 +15,13 @@ public class TourController {
     private final TourService tourService;
     private final TourMapper mapper;
 
-    @PostMapping("/save")
-    public TourResponseDto save(@RequestBody TourRequestDto dto) {
+    @PostMapping("/crete")
+    public TourResponseDto create(@RequestBody TourRequestDto dto) {
         return mapper.toDto(tourService.save(mapper.toModel(dto)));
     }
 
     @GetMapping("/findAll")
-    public List<TourResponseDto> getAll() {
+    public List<TourResponseDto> findAll() {
         return tourService.findAll().stream()
                 .map(mapper::toDto)
                 .toList();
