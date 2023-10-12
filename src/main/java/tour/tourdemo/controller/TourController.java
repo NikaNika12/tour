@@ -16,19 +16,19 @@ public class TourController {
     private final TourMapper mapper;
 
     @GetMapping("/all")
-    public List<TourResponseDto> getAllTours() {
+    public List<TourResponseDto> getAll() {
         return tourService.findAll().stream()
                 .map(mapper::toDto)
                 .toList();
     }
 
     @GetMapping("/{id}")
-    public TourResponseDto getTourById(@PathVariable Long id) {
+    public TourResponseDto getById(@PathVariable Long id) {
         return mapper.toDto(tourService.findByID(id));
     }
 
     @PutMapping("/{id}")
-    public TourResponseDto updateById(@PathVariable Long id, @RequestBody TourRequestDto dto) {
+    public TourResponseDto update(@PathVariable Long id, @RequestBody TourRequestDto dto) {
         return mapper.toDto(tourService.update(id, dto));
     }
 
