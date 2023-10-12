@@ -1,13 +1,7 @@
 package tour.tourdemo.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import tour.tourdemo.dto.request.TourRequestDto;
 import tour.tourdemo.dto.response.TourResponseDto;
 import tour.tourdemo.mapper.TourMapper;
@@ -20,6 +14,11 @@ import java.util.List;
 public class TourController {
     private final TourService tourService;
     private final TourMapper mapper;
+
+    @PostMapping("/save")
+    public TourResponseDto save(@RequestBody TourRequestDto dto) {
+        return mapper.toDto(tourService.save(mapper.toModel(dto)));
+    }
 
     @GetMapping("/all")
     public List<TourResponseDto> getAll() {
