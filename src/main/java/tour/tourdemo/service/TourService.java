@@ -1,6 +1,5 @@
 package tour.tourdemo.service;
 
-import tour.tourdemo.dto.request.TourRequestDto;
 import tour.tourdemo.model.Tour;
 
 import java.util.List;
@@ -8,7 +7,7 @@ import java.util.List;
 public interface TourService {
     Tour save(Tour tour);
 
-    Tour update(Long id, TourRequestDto dto);
+    Tour update(Long id, Tour tour);
 
     Tour findByID(Long id);
 
