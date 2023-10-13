@@ -20,4 +20,5 @@ public class Tour {
     private Integer price;
     private String location;
     private String type;
+    private boolean isDelete;
 }

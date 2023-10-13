@@ -5,8 +5,6 @@ import lombok.Data;
 
 @Data
 public class ApplicationRequestDto {
-    @NotNull
     private String fullName;
-    @NotNull
     private String contact;
 }

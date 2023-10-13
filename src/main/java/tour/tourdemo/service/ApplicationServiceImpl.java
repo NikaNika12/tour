@@ -1,7 +1,6 @@
 package tour.tourdemo.service;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tour.tourdemo.model.Application;
 import tour.tourdemo.repository.ApplicationRepository;
@@ -18,12 +17,19 @@ public class ApplicationServiceImpl implements ApplicationService {
     }
 
     @Override
+    public Application findById(Long id) {
+        return repository.findById(id).orElseThrow();
+    }
+
+    @Override
     public List<Application> findAll() {
         return repository.findAll();
     }
 
     @Override
     public void deleteById(Long id) {
-        repository.deleteById(id);
+        Application application = findById(id);
+        application.setDelete(true);
+        repository.save(application);
     }
 }

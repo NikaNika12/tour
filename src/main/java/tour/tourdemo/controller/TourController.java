@@ -1,7 +1,6 @@
 package tour.tourdemo.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import tour.tourdemo.dto.request.TourRequestDto;
 import tour.tourdemo.dto.response.TourResponseDto;
@@ -16,7 +15,6 @@ public class TourController {
     private final TourService tourService;
     private final TourMapper mapper;
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping("/create")
     public TourResponseDto create(@RequestBody TourRequestDto dto) {
         return mapper.toDto(tourService.save(mapper.toModel(dto)));

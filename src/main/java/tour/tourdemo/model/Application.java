@@ -12,4 +12,5 @@ public class Application {
     private Long id;
     private String fullName;
     private String contact;
+    private boolean isDelete;
 }

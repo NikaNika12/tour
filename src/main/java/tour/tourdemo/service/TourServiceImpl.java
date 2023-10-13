@@ -34,6 +34,8 @@ public class TourServiceImpl implements TourService {
 
     @Override
     public void deleteById(Long id) {
-        repository.deleteById(id);
+        Tour tour = findByID(id);
+        tour.setDelete(true);
+        repository.save(tour);
     }
 }
