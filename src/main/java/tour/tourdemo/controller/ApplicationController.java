@@ -28,8 +28,8 @@ public class ApplicationController {
                 .toList();
     }
 
-    @PostMapping("/crete")
-    public ApplicationResponseDto crete(@RequestBody ApplicationRequestDto application) {
+    @PostMapping("/create")
+    public ApplicationResponseDto create(@RequestBody ApplicationRequestDto application) {
         return mapper.toDto(applicationService.save(mapper.toModel(application)));
     }
 
