@@ -9,5 +9,4 @@ public class TourDemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TourDemoApplication.class, args);
 	}
-
 }
