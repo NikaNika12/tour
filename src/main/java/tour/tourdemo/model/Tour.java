@@ -1,5 +1,6 @@
 package tour.tourdemo.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,5 +21,6 @@ public class Tour {
     private Integer price;
     private String location;
     private String type;
+    @Column(name = "is_deleted")
     private boolean isDelete;
 }
