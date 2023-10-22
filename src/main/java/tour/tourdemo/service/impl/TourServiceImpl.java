@@ -1,10 +1,11 @@
-package tour.tourdemo.service;
+package tour.tourdemo.service.impl;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tour.tourdemo.model.Tour;
 import tour.tourdemo.repository.TourRepository;
+import tour.tourdemo.service.TourService;
 
 @RequiredArgsConstructor
 @Service
