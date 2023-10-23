@@ -31,7 +31,7 @@ public class ApplicationServiceImpl implements ApplicationService {
     @Override
     public void deleteById(Long id) {
         Application application = findById(id);
-        application.setDelete(true);
+        application.setDeleted(true);
         repository.save(application);
     }
 }

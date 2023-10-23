@@ -7,4 +7,5 @@ public class ApplicationResponseDto {
     private Long id;
     private String fullName;
     private String contact;
+    private boolean isDeleted;
 }

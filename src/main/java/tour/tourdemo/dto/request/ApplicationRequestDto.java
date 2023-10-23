@@ -6,4 +6,5 @@ import lombok.Data;
 public class ApplicationRequestDto {
     private String fullName;
     private String contact;
+    private boolean isDeleted;
 }

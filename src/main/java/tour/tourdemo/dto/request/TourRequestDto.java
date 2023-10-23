@@ -10,4 +10,5 @@ public class TourRequestDto {
     private Integer price;
     private String location;
     private String type;
+    private boolean isDeleted;
 }

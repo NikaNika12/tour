@@ -21,7 +21,7 @@ public class ApplicationController {
     private final ApplicationService applicationService;
     private final ApplicationMapper mapper;
 
-    @GetMapping("/findAll")
+    @GetMapping("/admin/findAll")
     public List<ApplicationResponseDto> findAll() {
         return applicationService.findAll().stream()
                 .map(mapper::toDto)
@@ -29,11 +29,11 @@ public class ApplicationController {
     }
 
     @PostMapping("/create")
-    public ApplicationResponseDto create(@RequestBody ApplicationRequestDto application) {
-        return mapper.toDto(applicationService.save(mapper.toModel(application)));
+    public ApplicationResponseDto create(@RequestBody ApplicationRequestDto dto) {
+        return mapper.toDto(applicationService.save(mapper.toModel(dto)));
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/admin/{id}")
     public void deleteById(@PathVariable Long id) {
         applicationService.deleteById(id);
     }

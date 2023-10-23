@@ -22,7 +22,7 @@ public class TourController {
     private final TourService tourService;
     private final TourMapper mapper;
 
-    @PostMapping("/create")
+    @PostMapping("/admin/create")
     public TourResponseDto create(@RequestBody TourRequestDto dto) {
         return mapper.toDto(tourService.save(mapper.toModel(dto)));
     }
@@ -39,12 +39,12 @@ public class TourController {
         return mapper.toDto(tourService.findByID(id));
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/admin/{id}")
     public TourResponseDto update(@PathVariable Long id, @RequestBody TourRequestDto dto) {
         return mapper.toDto(tourService.update(id, mapper.toModel(dto)));
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/admin/{id}")
     public void deleteById(@PathVariable Long id) {
         tourService.deleteById(id);
     }

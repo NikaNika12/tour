@@ -11,4 +11,5 @@ public class TourResponseDto {
     private Integer price;
     private String location;
     private String type;
+    private boolean isDeleted;
 }

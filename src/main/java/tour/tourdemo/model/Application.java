@@ -7,8 +7,10 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 @Table(name = "applications")
 @Entity
 public class Application {
@@ -17,6 +19,6 @@ public class Application {
     private Long id;
     private String fullName;
     private String contact;
-    @Column(name = "is_deleted")
-    private boolean isDelete;
+    @Column(name = "is_deleted", columnDefinition = "BOOLEAN DEFAULT false")
+    private boolean isDeleted;
 }

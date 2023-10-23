@@ -38,12 +38,14 @@ public class WebSecurityConfiguration {
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(
                         auth -> auth
-                                .requestMatchers("/tours/**")
+                                .requestMatchers("/applications/admin/**",
+                                        "tours/admin/**",
+                                        "/authentication/**")
                                 .authenticated()
                                 .anyRequest()
                                 .permitAll()
                 )
-//                .formLogin(withDefaults())
+                .formLogin(withDefaults())
                 .httpBasic(withDefaults())
                 .userDetailsService(userDetailsService)
                 .build();
