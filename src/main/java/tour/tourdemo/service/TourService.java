@@ -1,8 +1,7 @@
 package tour.tourdemo.service;
 
-import tour.tourdemo.model.Tour;
-
 import java.util.List;
+import tour.tourdemo.model.Tour;
 
 public interface TourService {
     Tour save(Tour tour);

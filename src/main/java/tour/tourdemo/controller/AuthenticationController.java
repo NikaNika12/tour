@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import tour.tourdemo.model.User;
+import tour.tourdemo.dto.request.UserRequestDto;
+import tour.tourdemo.dto.response.UserResponseDto;
+import tour.tourdemo.mapper.UserMapper;
 import tour.tourdemo.service.UserService;
 
 @RequiredArgsConstructor
@@ -17,10 +19,11 @@ import tour.tourdemo.service.UserService;
 public class AuthenticationController {
     private final UserService service;
     private final UserDetailsService userDetailsService;
+    private final UserMapper mapper;
 
     @PostMapping("/register")
-    public User register(@RequestBody User user) {
-        return service.save(user);
+    public UserResponseDto register(@RequestBody UserRequestDto dto) {
+        return mapper.toDto(service.save(mapper.toModel(dto)));
     }
 
     //Test endpoint

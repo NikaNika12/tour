@@ -1,12 +1,11 @@
 package tour.tourdemo.service.impl;
 
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tour.tourdemo.model.Application;
 import tour.tourdemo.repository.ApplicationRepository;
 import tour.tourdemo.service.ApplicationService;
-
-import java.util.List;
 
 @RequiredArgsConstructor
 @Service

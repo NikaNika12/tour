@@ -9,5 +9,5 @@ import tour.tourdemo.model.Tour;
 @Mapper(config = MapperConfig.class)
 public interface TourMapper {
     TourResponseDto toDto(Tour tour);
-    Tour toModel(TourRequestDto requestDto);
+    Tour toModel(TourRequestDto dto);
 }
